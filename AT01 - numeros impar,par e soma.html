@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT01 - impar, par e soma</title>
+
+
+</head>
+
+<body>
+    <h1>Exibir Números Pares</h1>
+
+    <form>
+        <label for="valorMaximo">Digite o valor máximo:</label>
+        <input type="number" id="valorMaximo">
+        <button onclick="exibirNumerosPares(event)">Exibir</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function exibirNumerosPares(event) {
+            event.preventDefault();
+
+            var valorMaximo = parseInt(document.getElementById("valorMaximo").value);
+            var numerosPares = [];
+            var somaTotal = 0;
+
+            for (var i = 1; i <= valorMaximo; i++) {
+                if (i % 2 === 0) {
+                    numerosPares.push(i);
+                    somaTotal += i;
+                }
+            }
+
+            var resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = "Números pares: " + numerosPares.join(", ") + "<br>";
+            resultadoDiv.innerHTML += "Soma total: " + somaTotal;
+        }
+    </script>
+
+</body>
+
+</html>

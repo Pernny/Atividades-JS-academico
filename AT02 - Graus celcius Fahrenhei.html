@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT02 - Graus celcius Fahrenhei</title>
+
+
+</head>
+
+<body>
+    <h1>Conversor de Temperatura</h1>
+  
+    <label for="temperatura">Temperatura:</label>
+    <input type="number" id="temperatura">
+    
+    <button onclick="converterTemperatura()">Converter</button>
+    
+    <div id="resultado"></div>
+    
+    <input type="radio" id="fahrenheitButton" name="conversao" value="fahrenheit" checked>
+    <label for="fahrenheitButton">Fahrenheit para Celsius</label>
+    
+    <input type="radio" id="celsiusButton" name="conversao" value="celsius">
+    <label for="celsiusButton">Celsius para Fahrenheit</label>
+    
+    <script>
+      function converterTemperatura() {
+        var temperaturaInput = document.getElementById("temperatura");
+        var temperatura = parseFloat(temperaturaInput.value);
+        var resultadoDiv = document.getElementById("resultado");
+        var resultado;
+  
+        // Verifica qual botão de conversão está selecionado
+        var fahrenheitButton = document.getElementById("fahrenheitButton");
+        var celsiusButton = document.getElementById("celsiusButton");
+  
+        if (fahrenheitButton.checked) {
+          // Conversão de Fahrenheit para Celsius
+          resultado = (temperatura - 32) * 5/9;
+          resultadoDiv.innerHTML = temperatura + " °F é igual a " + resultado.toFixed(2) + " °C";
+        } else if (celsiusButton.checked) {
+          // Conversão de Celsius para Fahrenheit
+          resultado = (temperatura * 9/5) + 32;
+          resultadoDiv.innerHTML = temperatura + " °C é igual a " + resultado.toFixed(2) + " °F";
+        } else {
+          // Nenhum botão de conversão selecionado
+          resultadoDiv.innerHTML = "Selecione uma opção de conversão.";
+        }
+      }
+    </script>
+
+</body>
+
+</html>

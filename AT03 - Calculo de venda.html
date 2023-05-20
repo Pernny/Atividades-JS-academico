@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT02 - Graus celcius Fahrenhei</title>
+
+
+</head>
+
+<body>
+  <h1>Calculadora de Vendas</h1>
+  
+  <h2>Produto 1</h2>
+  <label for="nomeProduto1">Nome:</label>
+  <input type="text" id="nomeProduto1">
+  <label for="valorProduto1">Valor:</label>
+  <input type="number" id="valorProduto1">
+  <label for="quantidadeProduto1">Quantidade Vendida:</label>
+  <input type="number" id="quantidadeProduto1">
+  
+  <h2>Produto 2</h2>
+  <label for="nomeProduto2">Nome:</label>
+  <input type="text" id="nomeProduto2">
+  <label for="valorProduto2">Valor:</label>
+  <input type="number" id="valorProduto2">
+  <label for="quantidadeProduto2">Quantidade Vendida:</label>
+  <input type="number" id="quantidadeProduto2">
+  
+  <h2>Produto 3</h2>
+  <label for="nomeProduto3">Nome:</label>
+  <input type="text" id="nomeProduto3">
+  <label for="valorProduto3">Valor:</label>
+  <input type="number" id="valorProduto3">
+  <label for="quantidadeProduto3">Quantidade Vendida:</label>
+  <input type="number" id="quantidadeProduto3">
+  
+  <button onclick="calcularValorTotal()">Calcular Valor Total</button>
+  
+  <div id="resultado"></div>
+  
+  <script>
+    function calcularValorTotal() {
+      var valorTotal = 0;
+
+      // Produto 1
+      var valorProduto1 = parseFloat(document.getElementById("valorProduto1").value);
+      var quantidadeProduto1 = parseFloat(document.getElementById("quantidadeProduto1").value);
+      var subtotalProduto1 = valorProduto1 * quantidadeProduto1;
+      valorTotal += subtotalProduto1;
+
+      // Produto 2
+      var valorProduto2 = parseFloat(document.getElementById("valorProduto2").value);
+      var quantidadeProduto2 = parseFloat(document.getElementById("quantidadeProduto2").value);
+      var subtotalProduto2 = valorProduto2 * quantidadeProduto2;
+      valorTotal += subtotalProduto2;
+
+      // Produto 3
+      var valorProduto3 = parseFloat(document.getElementById("valorProduto3").value);
+      var quantidadeProduto3 = parseFloat(document.getElementById("quantidadeProduto3").value);
+      var subtotalProduto3 = valorProduto3 * quantidadeProduto3;
+      valorTotal += subtotalProduto3;
+
+      var resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = "Valor Total da Venda: R$ " + valorTotal.toFixed(2);
+    }
+  </script>
+
+</body>
+
+</html>
