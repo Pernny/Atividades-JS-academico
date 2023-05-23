@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT05 - Custo do piso</title>
+
+
+</head>
+<body>
+  <h1>Calculadora de Custo de Piso</h1>
+  
+  <label for="comprimento">Comprimento do cômodo (metros):</label>
+  <input type="number" id="comprimento">
+  
+  <label for="largura">Largura do cômodo (metros):</label>
+  <input type="number" id="largura">
+  
+  <button onclick="calcularCustoPiso()">Calcular Custo de Piso</button>
+  
+  <div id="resultado"></div>
+  
+  <script>
+    function calcularCustoPiso() {
+      var comprimento = parseFloat(document.getElementById("comprimento").value);
+      var largura = parseFloat(document.getElementById("largura").value);
+      var precoMetroQuadrado = 36.00;
+      var area = comprimento * largura;
+      var custoTotal = area * precoMetroQuadrado;
+
+      var resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = "Custo Total para Assentar Piso: R$ " + custoTotal.toFixed(2);
+    }
+  </script>
+</body>
+</html>
