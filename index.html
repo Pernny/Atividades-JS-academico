@@ -67,11 +67,12 @@
                 <div class="col-lg-8">
                     <h2 class="text-white mb-4">Ex.09 | Jogo simples JavaScript, CSS e HTML</h2>
                     <p class="text-white-50">
-                        Simples jogo do Mario, seu objetivo é pular e desviar dos tubos em busca da princesa que foi sequestrada pelo Bowser
+                        Simples jogo do Mario, seu objetivo é pular e desviar dos tubos em busca da princesa que foi
+                        sequestrada pelo Bowser
                         <a href="AT09 - Jogo simples.html">the preview page.</a>
                         Sua missão é não morrer e resgatar a princesa, apenas cuidado atráz do armário.
                     </p>
-                    <button class="btn btn-primary" onclick="window.location.href = 'AT09 - Jogo simples.html'" >Abrir
+                    <button class="btn btn-primary" onclick="window.location.href = 'AT09 - Jogo simples.html'">Abrir
                         jogo</button>
                 </div>
             </div>
@@ -242,30 +243,114 @@
                 }
             </script>
 
-
-
-
-
-
-
-
-
-
             <!-- Project 2 Row-->
-            <div class="row gx-0 justify-content-center" id="Ex.04">
-                <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
+            <div class="row gx-0 justify-content-center" id="Ex.03">
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/Vendas.jpg" alt="..." /></div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Mountains</h4>
-                                <p class="mb-0 text-white-50">Another example of a project with its respective
-                                    description. These sections work well responsively as well!</p>
+                                <h4 class="text-white">Ex.03 | Calculadora de vendas</h4>
+                                <p class="mb-0 text-white-50">Desenvolva uma página leia o nome, o valor e a quantidade
+                                    vendida de três produtos. Calcule o valor total da venda.</p>
+                                <p></p>
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#calVendasModal">Abrir Vendas</button>
                             </div>
+
+
+                        </div>
+                    </div>
+                </div>/
+            </div>
+
+
+
+            <!-- Modal da Calculadora de Vendas -->
+            <div class="modal fade" id="calVendasModal" tabindex="-1" role="dialog"
+                aria-labelledby="calVendasModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="calVendasModalLabel">Calculadora de Vendas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Fechar"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formVendas" onsubmit="event.preventDefault(); calcularValorTotal();">
+                                <div>
+                                    <h2>Produto 1</h2>
+                                    <label for="nomeProduto1">Nome:</label>
+                                    <input type="text" id="nomeProduto1">
+                                    <label for="valorProduto1">Valor:</label>
+                                    <input type="number" id="valorProduto1">
+                                    <label for="quantidadeProduto1">Quantidade Vendida:</label>
+                                    <input type="number" id="quantidadeProduto1">
+                                </div>
+
+                                <div>
+                                    <h2>Produto 2</h2>
+                                    <label for="nomeProduto2">Nome:</label>
+                                    <input type="text" id="nomeProduto2">
+                                    <label for="valorProduto2">Valor:</label>
+                                    <input type="number" id="valorProduto2">
+                                    <label for="quantidadeProduto2">Quantidade Vendida:</label>
+                                    <input type="number" id="quantidadeProduto2">
+                                </div>
+
+                                <div>
+                                    <h2>Produto 3</h2>
+                                    <label for="nomeProduto3">Nome:</label>
+                                    <input type="text" id="nomeProduto3">
+                                    <label for="valorProduto3">Valor:</label>
+                                    <input type="number" id="valorProduto3">
+                                    <label for="quantidadeProduto3">Quantidade Vendida:</label>
+                                    <input type="number" id="quantidadeProduto3">
+                                </div>
+
+                                <button type="submit">Calcular Valor Total</button>
+                            </form>
+
+                            <div id="resultado3"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                function calcularValorTotal() {
+                    var valorTotal = 0;
+
+                    // Produto 1
+                    var valorProduto1 = parseFloat(document.getElementById("valorProduto1").value);
+                    var quantidadeProduto1 = parseFloat(document.getElementById("quantidadeProduto1").value);
+                    var subtotalProduto1 = valorProduto1 * quantidadeProduto1;
+                    valorTotal += subtotalProduto1;
+
+                    // Produto 2
+                    var valorProduto2 = parseFloat(document.getElementById("valorProduto2").value);
+                    var quantidadeProduto2 = parseFloat(document.getElementById("quantidadeProduto2").value);
+                    var subtotalProduto2 = valorProduto2 * quantidadeProduto2;
+                    valorTotal += subtotalProduto2;
+
+                    // Produto 3
+                    var quantidadeProduto3 = parseFloat(document.getElementById("quantidadeProduto3").value);
+                    var subtotalProduto3 = valorProduto3 * quantidadeProduto3;
+                    valorTotal += subtotalProduto3;
+
+                    var resultado3Div = document.getElementById("resultado3");
+                    resultado3Div.innerHTML = "Valor Total da Venda: R$ " + valorTotal.toFixed(2);
+                }
+            </script>
+
+
+
+
+
+
+
+
+
             <!-- Project 3 Row-->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center" id="Ex.02">
                 <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
@@ -273,14 +358,24 @@
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Misty</h4>
-                                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or
-                                    anything else, along with a description.</p>
+                                <h4 class="text-white">Ex.03 | Calculadora de vendas</h4>
+                                <p class="mb-0 text-white-50">Desenvolva uma página leia o nome, o valor e a quantidade
+                                    vendida de três produtos. Calcule o valor total da venda.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
             <!-- Project 4 Row-->
             <div class="row gx-0 justify-content-center" id="Ex.04">
                 <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
