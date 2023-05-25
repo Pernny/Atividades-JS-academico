@@ -18,8 +18,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
-    
-    
+
+
 </head>
 
 <body id="page-top">
@@ -67,16 +67,15 @@
                 <div class="col-lg-8">
                     <h2 class="text-white mb-4">Ex.09 | Jogo simples JavaScript, CSS e HTML</h2>
                     <p class="text-white-50">
-                        Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now,
-                        simply download the template on
-                        <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                        The theme is open source, and you can use it for any purpose, personal or commercial.
+                        Simples jogo do Mario, seu objetivo é pular e desviar dos tubos em busca da princesa que foi sequestrada pelo Bowser
+                        <a href="AT09 - Jogo simples.html">the preview page.</a>
+                        Sua missão é não morrer e resgatar a princesa, apenas cuidado atráz do armário.
                     </p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculadoraModal">Abrir
+                    <button class="btn btn-primary" onclick="window.location.href = 'AT09 - Jogo simples.html'" >Abrir
                         jogo</button>
                 </div>
             </div>
-            <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+            <img class="img-fluid" src="assets/img/mario-grayscale-sf.png" alt="..." />
         </div>
 
     </section>
@@ -86,7 +85,9 @@
             <!-- Featured Project Row-->
             <div class="row gx-0 mb-4 mb-lg-5 align-items-center" id="Ex.01">
                 <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." />
+
+                    <a href="AT01 - numeros impar,par e soma.html"><img class="img-fluid mb-3 mb-lg-0"
+                            src="assets/img/Calculadora.png" alt="..." /></a>
                 </div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
@@ -108,16 +109,17 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="calculadoraModalLabel">Calculadora</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Fechar"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"
+                                onclick="resetCalculadora()"></button>
                         </div>
                         <div class="modal-body">
-                            <h1>Exibir números pares</h1>
+                            <h2>Exibir números pares</h2>
 
                             <form>
-                                <label for="valorMaximo">Digite o valor máximo:</label>
+                                <label for="valorMaximo">Valor máx:</label>
                                 <input type="number" id="valorMaximo">
                                 <button onclick="exibirNumerosPares(event)">Exibir</button>
+                                <button type="button" onclick="resetCalculadora()">Resetar</button>
                             </form>
 
                             <div id="resultado"></div>
@@ -141,37 +143,22 @@
                                     resultadoDiv.innerHTML = "Números pares: " + numerosPares.join(", ") + "<br>";
                                     resultadoDiv.innerHTML += "Soma total: " + somaTotal;
                                 }
+
+                                function resetCalculadora() {
+                                    document.getElementById("valorMaximo").value = "";
+                                    document.getElementById("resultado").innerHTML = "";
+                                }
                             </script>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <script>
-                function exibirNumerosPares(event) {
-                    event.preventDefault();
-
-                    var valorMaximo = parseInt(document.getElementById("valorMaximo").value);
-                    var numerosPares = [];
-                    var somaTotal = 0;
-
-                    for (var i = 1; i <= valorMaximo; i++) {
-                        if (i % 2 === 0) {
-                            numerosPares.push(i);
-                            somaTotal += i;
-                        }
-                    }
-
-                    var resultadoDiv = document.getElementById("resultado");
-                    resultadoDiv.innerHTML = "Números pares: " + numerosPares.join(", ") + "<br>";
-                    resultadoDiv.innerHTML += "Soma total: " + somaTotal;
-                }
-            </script>
 
             <!-- Project 1 Row-->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center" id="Ex.02">
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." />
+                    <img class="img-fluid" src="assets/img/termometro.jpg" alt="..." />
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
@@ -179,10 +166,12 @@
                             <div class="project-text w-100 my-auto text-center text-lg-left">
                                 <h4 class="text-white">Ex.02 | Conversor de temperatura</h4>
                                 <p class="mb-0 text-white-50">
-                                    Desenvolva uma página que leia uma temperatura e converta a ela para os graus Fahrenheit ou 
+                                    Desenvolva uma página que leia uma temperatura e converta a ela para os graus
+                                    Fahrenheit ou
                                     Celsius.
                                 </p><br>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#conversorModal">Abrir
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#conversorModal">Abrir
                                     Conversor</button>
                             </div>
                         </div>
@@ -191,28 +180,33 @@
             </div>
 
             <!-- Modal do Conversor de Temperatura -->
-            <div class="modal fade" id="conversorModal" tabindex="-1" role="dialog" aria-labelledby="conversorModalLabel" aria-hidden="true">
+            <div class="modal fade" id="conversorModal" tabindex="-1" role="dialog"
+                aria-labelledby="conversorModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="conversorModalLabel">Conversor de Temperatura</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"
+                                onclick="resetTemperatura()"></button>
                         </div>
                         <div class="modal-body">
-                            <h1>Conversor de Temperatura</h1>
-                            <label for="temperatura">Temperatura:</label>
+                            <h2>Conversor de Temperatura</h2>
+                            <input type="radio" id="fahrenheitButton" name="conversao" value="fahrenheit" checked>
+                            <label class="form-check-label" for="fahrenheitButton">Fahrenheit para Celsius</label>
+
+                            <input type="radio" id="celsiusButton" name="conversao" value="celsius">
+                            <label class="form-check-label" for="celsiusButton">Celsius para Fahrenheit</label>
+
+                            <p></p>
                             <input type="number" id="temperatura">
                             <button onclick="converterTemperatura()">Converter</button>
+                            <button onclick="resetTemperatura()">Reset</button>
+
+
+                            <p></p>
                             <div id="resultado"></div>
-                            <input type="radio" id="fahrenheitButton" name="conversao" value="fahrenheit" checked>
-                            <label for="fahrenheitButton">Fahrenheit para Celsius</label>
-                            <input type="radio" id="celsiusButton" name="conversao" value="celsius">
-                            <label for="celsiusButton">Celsius para Fahrenheit</label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            <div id="resultado2" class="text-center"></div>
                         </div>
                     </div>
                 </div>
@@ -221,8 +215,8 @@
                 function converterTemperatura() {
                     var temperaturaInput = document.getElementById("temperatura");
                     var temperatura = parseFloat(temperaturaInput.value);
-                    var resultadoDiv = document.getElementById("resultado");
-                    var resultado;
+                    var resultado2Div = document.getElementById("resultado2");
+                    var resultado2;
 
                     // Verifica qual botão de conversão está selecionado
                     var fahrenheitButton = document.getElementById("fahrenheitButton");
@@ -230,18 +224,33 @@
 
                     if (fahrenheitButton.checked) {
                         // Conversão de Fahrenheit para Celsius
-                        resultado = (temperatura - 32) * 5 / 9;
-                        resultadoDiv.innerHTML = temperatura + " °F é igual a " + resultado.toFixed(2) + " °C";
+                        resultado2 = (temperatura - 32) * 5 / 9;
+                        resultado2Div.innerHTML = temperatura + " °F é igual a " + resultado2.toFixed(2) + " °C";
                     } else if (celsiusButton.checked) {
                         // Conversão de Celsius para Fahrenheit
-                        resultado = (temperatura * 9 / 5) + 32;
-                        resultadoDiv.innerHTML = temperatura + " °C é igual a " + resultado.toFixed(2) + " °F";
+                        resultado2 = (temperatura * 9 / 5) + 32;
+                        resultado2Div.innerHTML = temperatura + " °C é igual a " + resultado2.toFixed(2) + " °F";
                     } else {
                         // Nenhum botão de conversão selecionado
-                        resultadoDiv.innerHTML = "Selecione uma opção de conversão.";
+                        resultado2Div.innerHTML = "Selecione uma opção de conversão.";
                     }
                 }
+
+                function resetTemperatura() {
+                    document.getElementById("temperatura").value = "";
+                    document.getElementById("resultado2").innerHTML = "";
+                }
             </script>
+
+
+
+
+
+
+
+
+
+
             <!-- Project 2 Row-->
             <div class="row gx-0 justify-content-center" id="Ex.04">
                 <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
